@@ -9,6 +9,7 @@ class Trading extends Engine.Scene {
 
         this.engine.addAction("buy");
         this.engine.addAction("sell");
+        this.engine.addAction("cheat");
     }
 
 
@@ -36,6 +37,10 @@ class Trading extends Engine.Scene {
         if(this.cash > 2000) {
             this.engine.show('Cash > $2k, noice!');
             this.engine.gotoScene(Victory);
+        }
+
+        if(action == "cheat"){
+            this.cash += 500;
         }
     }
 }
